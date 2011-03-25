@@ -217,7 +217,8 @@
 		
 		.Viper_form_element {
 			float: left;
-			width: 50%;
+			width: 45%;
+			margin: 5px;
 		}
 		
 		.Viper_label {
@@ -227,6 +228,10 @@
 		
 		.Viper_input {
 			margin-left: 20px;
+		}
+		
+		.Viper_input input[type=text] {
+			width: 95%;
 		}
 		
 		#Viper_preview_pane {

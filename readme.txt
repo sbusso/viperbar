@@ -1,11 +1,11 @@
-=== ViperFeed ===
+=== ViperBar ===
 
 Contributors: ViperChill
 Donate link: http://viperchill.com/
-Tags: rss, stats, subscribers, aweber, feedburner, hellobar, popup, viperchill, bar
+Tags: rss, stats, subscribers, aweber, feedburner, popup, viperchill, bar, conversion, mailchimp, mail, chimp, list
 Requires at least: 3.0
 Tested up to: 3.1
-Stable tag: 1.0
+Stable tag: 1.1
 
 ViperBar adds an attractive bar to your site header, which you can use to increase blog or newsletter subscribers.
 

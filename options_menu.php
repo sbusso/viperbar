@@ -232,14 +232,6 @@
 							</div>
 						</div>
 						<div class="Viper_form_element">
-							<div class="Viper_label">Aweber List ID:</div>
-							<div class="Viper_input">
-								<p>Leave this blank to remove the form.</p>
-								<input type="text" name="form_id_aweber" value="<?php echo $options['form_id_aweber']; ?>">
-								<p>This is the list name. (i.e. "ViperChill")</p>
-							</div>
-						</div>
-						<div class="Viper_form_element">
 							<div class="Viper_label">Feedburner ID:</div>
 							<div class="Viper_input">
 								<p>Leave this blank to remove the form.</p>
@@ -247,10 +239,35 @@
 								<p>This is the feed name. (i.e. "ViperChill")</p>
 							</div>
 						</div>
+						<br style="clear: both;">
+						<div class="Viper_form_element">
+							<div class="Viper_label">Aweber List ID:</div>
+							<div class="Viper_input">
+								<p>Leave this blank to remove the form.</p>
+								<input type="text" name="form_id_aweber" value="<?php echo $options['form_id_aweber']; ?>">
+								<p>This is the list name. (i.e. "ViperChill")</p>
+							</div>
+						</div>
+						<br style="clear: both;">
+						<div class="Viper_form_element">
+							<div class="Viper_label">MailChimp API Key:</div>
+							<div class="Viper_input">
+								<input type="text" name="form_id_mailchimp" value="<?php echo $options['form_id_mailchimp']; ?>">
+							</div>
+							<p>You get this from the account drop-down, near the bottom.</p>
+						</div>
+						<div class="Viper_form_element">
+							<div class="Viper_label">MailChimp Unique List ID:</div>
+							<div class="Viper_input">
+								<input type="text" name="form_id_mailchimp_list" value="<?php echo $options['form_id_mailchimp_list']; ?>">
+							</div>
+							<p>Go to your list settings. It's at the bottom.</p>
+						</div>
+						<br style="clear: both;">
 						<div class="Viper_form_element">
 							<div class="Viper_label">Thank you text:</div>
 							<div class="Viper_input">
-								<p>This is the text the user sees when they submit the Aweber form.</p>
+								<p>This is the text the user sees when they submit the Aweber or MailChimp form.</p>
 								<input type="text" name="text_thanks" value="<?php echo $options['text_thanks']; ?>">
 							</div>
 						</div>

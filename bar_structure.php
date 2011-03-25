@@ -17,6 +17,7 @@ var html =
 					
 					if($options['form_id_feedburner'] != "") require("form_feedburner.php");
 					if($options['form_id_aweber'] != "") require("form_aweber.php");
+					if($options['form_id_mailchimp'] != "") require("form_mailchimp.php");
 					
 					echo $options['text_after'];
 					echo $options['text_custom'];
