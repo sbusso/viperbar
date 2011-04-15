@@ -3,7 +3,7 @@
 Plugin Name: ViperBar
 Plugin URI: http://www.viperchill.com/wordpress-plugins/
 Description: ViperBar adds an attractive bar to your site header, which you can use to increase blog or newsletter subscribers. It includes built in styling, Aweber & Feedburner integration, and conversion rate tracking.
-Version: 1.1
+Version: 1.2
 Author: ViperChill
 Author URI: http://www.viperchill.com
 License: GPL2

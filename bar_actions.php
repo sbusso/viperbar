@@ -1,18 +1,85 @@
+function ViperBar_hide() {
+	jQuery('#ViperBar_inner').hide();
+	jQuery('#ViperBar_show').show();
+	
+	var height = jQuery('#ViperBar_main').css("height");
+	var background = jQuery('body').css("background-position");
+	
+	height = parseInt(height.replace("px",""));
+	
+	if(background) {
+		background = parseInt(background.replace("%",""));
+	} else {
+		background = 0;
+	}
+	
+	var position = background - height;
+	
+	jQuery('body').css("background-position","0px " + position.toString() + "px");
+}
+
+function ViperBar_show() {
+	jQuery('#ViperBar_inner').show();
+	jQuery('#ViperBar_show').hide();
+	
+	var height = jQuery('#ViperBar_main').css("height");
+	var background = jQuery('body').css("background-position");
+	
+	height = parseInt(height.replace("px",""));
+	
+	if(background) {
+		background = parseInt(background.replace("%",""));
+	} else {
+		background = 0;
+	}
+	
+	var position = background + height;
+	
+	jQuery('body').css("background-position","0px " + position.toString() + "px");
+}
+
+jQuery('#ViperBar_main').css(
+	"margin-top",
+	"-" + jQuery('body').css("padding-top")
+);
+
+jQuery('#ViperBar_main').css(
+	"margin-right",
+	"-" + jQuery('body').css("padding-right")
+);
+
+jQuery('#ViperBar_main').css(
+	"margin-left",
+	"-" + jQuery('body').css("padding-left")
+);
+
+var width = jQuery('#ViperBar_main').css("width");
+width = parseInt(width.replace("px",""));
+
+var marginLeft = jQuery('#ViperBar_main').css("margin-left");
+marginLeft = parseInt(marginLeft.replace("px","")) * -1;
+
+var marginRight = jQuery('#ViperBar_main').css("margin-right");
+marginRight = parseInt(marginRight.replace("px","")) * -1;
+
+jQuery('#ViperBar_main').css("width",(width + marginLeft + marginRight));
+
 jQuery('#ViperBar_hide').click(function() {
-	jQuery('#ViperBar_inner').slideUp("fast");
-	jQuery('#ViperBar_show').slideDown("fast");
+	ViperBar_hide();
 });
 
 jQuery('#ViperBar_show').click(function() {
-	jQuery('#ViperBar_inner').slideDown("fast");
-
-	jQuery('#ViperBar_show').slideUp("fast");
+	ViperBar_show();
 });
 
 jQuery('#ViperBar_inner').hide();
-
 jQuery('#ViperBar_show').hide();
-jQuery('#ViperBar_inner').slideDown("fast");
+
+ViperBar_show();
+ViperBar_hide();
+ViperBar_show();
+
+jQuery('#ViperBar_credit_logo').css("display","block");
 
 jQuery('.Viper_input_default').focus(function() {
 	jQuery(this).val("");
@@ -21,7 +88,7 @@ jQuery('.Viper_input_default').focus(function() {
 jQuery('.ViperBar_form').submit(function() {
 	jQuery.ajax({
 		async: false,
-		url: '<?php echo WP_PLUGIN_URL."/".$this->plugin_dir; ?>/stats.php?increment=true&type=submit',
+		url: '<?php echo WP_PLUGIN_URL."/".$this->plugin_dir; ?>/stats.php?increment=true&type=submit&r=' + Math.random(),
 		success: function() {
 			if(jQuery('#Viper_feedburner_id').val() == "feedburner") {
 				window.open(
@@ -39,5 +106,5 @@ jQuery('.ViperBar_form').submit(function() {
 });
 
 jQuery.ajax({
-	url: '<?php echo WP_PLUGIN_URL."/".$this->plugin_dir; ?>/stats.php?increment=true&type=impression',
+	url: '<?php echo WP_PLUGIN_URL."/".$this->plugin_dir; ?>/stats.php?increment=true&type=impression'
 });

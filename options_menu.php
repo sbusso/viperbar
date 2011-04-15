@@ -86,33 +86,9 @@
 	
 	$plugin_dir = str_replace("/".basename(__FILE__),"",plugin_basename(__FILE__));
 ?>
+<script src="<?php echo WP_PLUGIN_URL."/".$plugin_dir; ?>/js/admin.php">
+</script>
 <script type="text/javascript">
-	function Viper_change_panel(panel,element) {
-		jQuery('#Viper_panel_main').children().hide();
-		jQuery('#Viper_panel_' + panel).show();
-		jQuery('#Viper_sections').children().removeClass('Viper_active');
-		jQuery('#Viper_sections').children().addClass('Viper_inactive');
-		jQuery(element).addClass('Viper_active');
-		jQuery(element).removeClass('Viper_inactive');
-	}
-	
-	function Viper_change_subpanel(panel,subpanel,element) {
-		jQuery('#Viper_subpanel_' + panel + '_main').children().hide();
-		jQuery('#Viper_subpanel_' + panel + '_' + subpanel).show();
-		jQuery('#Viper_subsections_' + panel).children().removeClass('Viper_active');
-		jQuery('#Viper_subsections_' + panel).children().addClass('Viper_inactive');
-		jQuery(element).addClass('Viper_active');
-		jQuery(element).removeClass('Viper_inactive');
-	}
-	
-	function see_new_color(hex,element) {
-		document.getElementById('preview_color_' + element).style.background = '#' + hex;
-	}
-	
-	function set_color_store(position) {
-		document.getElementById('Viper_color_selector_store').value = position;
-	}
-	
 	function set_new_color(hex,element,query_type) {
 		document.getElementById('new_color_' + element).src = '<?php echo WP_PLUGIN_URL."/".$plugin_dir; ?>/gradient.php?width=530&color=' + hex;
 	
@@ -171,12 +147,15 @@
 	
 	function Viper_poll() {
 		jQuery.ajax({
-			url: '<?php echo WP_PLUGIN_URL."/".$this->plugin_dir; ?>/stats.php',
+			url: '<?php echo WP_PLUGIN_URL."/".$this->plugin_dir; ?>/stats.php?r=' + Math.random(),
 			success: function(data) {
 				var stat_array = eval('(' + data + ')');
 				jQuery('#ViperBar_stats_impressions').html(stat_array['impressions']);
 				jQuery('#ViperBar_stats_submits').html(stat_array['submits']);
 				jQuery('#ViperBar_stats_conversion').html(stat_array['conversion'] + '%');
+			},
+			error: function(data) {
+				//alert(data);
 			}
 		});
 	}
@@ -185,8 +164,6 @@
 <div id="Viper_main_container">
 	<?php
 		echo file_get_contents("http://www.viperchill.com/rss/plugin_header.php?plugin=".$plugin_dir);
-		
-		//echo "<pre>".print_r($options,true)."</pre>";
 	?>
 	<div id="Viper_loading">
 		<h1>ViperBar is Loading...</h1>
@@ -209,6 +186,18 @@
 						<input type="radio" name="enabled" value="false" <?php echo ($options['enabled'] == "false") ? 'checked="checked"' : ''; ?>>No
 					</div>
 				</div>
+				<!--<div class="Viper_form_element">
+					<div class="Viper_label">Need support?</div>
+					<div class="Viper_input">
+						Here's how to use <a href="http://www.viperchill.com/viperbar-guide/" target="_blank">ViperBar</a>.
+					</div>
+				</div>
+				<div class="Viper_form_element">
+					<div class="Viper_label">Premium Upgrade</div>
+					<div class="Viper_input">
+						Do you want to remove branding? Get ViperBar Premium for just $37 <a href="http://www.viperchill.com/viperbar-premium/" target="_blank">here</a>.
+					</div>
+				</div>-->
 				<br style="clear: both;">
 			</div>
 			<div id="Viper_panel_content">
@@ -321,7 +310,8 @@
 						<td id="ViperBar_stats_conversion"></td>
 					</tr>
 				</table>
-				<a href="#" id="Viper_reset_stats">Reset Stats</a>
+				<a href="#" id="Viper_reset_stats">Reset Stats</a><br>
+				*If you do not include opt-in forms on your bar, then note that the conversion rate statistics will not apply.
 			</div>
 			<div id="Viper_panel_preview">
 				<div id="Viper_preview_pane">

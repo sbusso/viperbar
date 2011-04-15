@@ -14,46 +14,43 @@
 	}
 ?>
 <style>
-	body {
-		padding: 0px !important;
-	}
-
 	#ViperBar_main {
 		width: 100%;
 		position: relative;
+		z-index: 10000;
 	}
 
 	#ViperBar_inner {
 		width: 100%;
 		background:
 			<?php
-				if($options['bar_type'] == "solid") {
+				if($options['bar_type'] == "solid" && $options['bar_solid_color'] != "") {
 					echo
 						"#".$options['bar_solid_color'];
 					$check_color = $options['bar_solid_color'];
-				}
-				if($options['bar_type'] == "two") {
+				} elseif($options['bar_type'] == "two" && $options['bar_color_bottom'] != "" && $options['bar_color_top'] != "") {
 					echo
 						"#".$options['bar_color_bottom']."
 						url('".WP_PLUGIN_URL."/".$this->plugin_dir."/gradient.php?".
 							"width=10&height=45&top=".$options['bar_color_top']."&bottom=".$options['bar_color_bottom']."')";
 					$check_color = $options['bar_color_top'];
-				}
-				
-				if($options['bar_type'] == "single") {
+				} elseif($options['bar_type'] == "single" && $options['bar_single_color'] !="") {
 					echo
 						"#".$options['bar_single_color']."
 						url('".WP_PLUGIN_URL."/".$this->plugin_dir."/gradient.php?".
 							"width=10&height=45&color=".$options['bar_single_color']."')";
 					$check_color = $options['bar_single_color'];
-				}
-				
-				if($options['bar_type'] == "image") {
+				} elseif($options['bar_type'] == "image") {
 					$upload_dir = wp_upload_dir();
 				
 					echo
-						"#".$options['bar_color_bottom']."
-						url('".$upload_dir['baseurl']."/ViperBar_custom_image.jpg')";
+						"url('".$upload_dir['baseurl']."/ViperBar_custom_image.jpg')";
+				} else {
+					echo
+						"#888888
+						url('".WP_PLUGIN_URL."/".$this->plugin_dir."/gradient.php?".
+							"width=10&height=45&color=888888')";
+					$check_color = $options['bar_single_color'];
 				}
 			?>
 			repeat-x;
@@ -76,6 +73,7 @@
 		top: 5px;
 		left: 3px;
 		margin: 3px 30px 0px 0px;
+		display: none;
 	}
 	
 	#ViperBar_hide, #ViperBar_show  {
