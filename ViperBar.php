@@ -28,6 +28,7 @@ if (!class_exists("ViperBar")) {
 		var $plugin_name;
 		var $options_name;
 		var $plugin_dir;
+		var $called;
 		
 		function activate() {
 			$default_options = array(
@@ -55,8 +56,10 @@ if (!class_exists("ViperBar")) {
 		function go($content = '') {
 			$options = get_option($this->options_name);
 			
-			if($options['enabled'] == "true") {
+			if($options['enabled'] == "true" && $this->called != true) {
 				require("header.php");
+				echo "<!-- ViperBar 1.2 -->";
+				$this->called = true;
 			}
 		}
 		
