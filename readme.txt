@@ -13,6 +13,8 @@ ViperBar adds an attractive bar to your site header, which you can use to increa
 
 ViperBar adds an attractive bar to your site header, which you can use to increase blog or newsletter subscribers. It includes built in styling, Aweber & Feedburner integration, conversion rate tracking, split-testing, themes, and much more.
 
+[ViperChill](http://www.viperchill.com/), a blog on Viral Marketing, is the creator of this plugin. If you want to take your blog to the next level, you should read this post on [Wordpress SEO](http://www.viperchill.com/wordpress-seo/).
+
 == Installation ==
 
 1. Upload ViperFeed directory to the `/wp-content/plugins/` directory
