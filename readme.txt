@@ -2,16 +2,16 @@
 
 Contributors: ViperChill
 Donate link: http://viperchill.com/
-Tags: rss, stats, subscribers, aweber, feedburner, popup, viperchill, bar, conversion, mailchimp, mail, chimp, list
+Tags: rss, stats, subscribers, aweber, feedburner, popup, viperchill, bar, conversion, mailchimp, mail, chimp, list, split-test
 Requires at least: 3.0
-Tested up to: 3.1
-Stable tag: 1.2.1
+Tested up to: 3.2.1
+Stable tag: 2.0
 
 ViperBar adds an attractive bar to your site header, which you can use to increase blog or newsletter subscribers.
 
 == Description ==
 
-ViperBar adds an attractive bar to your site header, which you can use to increase blog or newsletter subscribers. It includes built in styling, Aweber & Feedburner integration, and conversion rate tracking.
+ViperBar adds an attractive bar to your site header, which you can use to increase blog or newsletter subscribers. It includes built in styling, Aweber & Feedburner integration, conversion rate tracking, split-testing, themes, and much more.
 
 == Installation ==
 
@@ -30,8 +30,6 @@ Email hq@viperchill.com
 Yes.
 
 == Screenshots ==
-
-1. This is a quick picture of the color picker for your 'breaker' bar.
 
 == Changelog ==
 
@@ -53,6 +51,19 @@ Fixed bugs that were preventing the bar from displaying on some sites.
 = 1.2.1 =
 Fixed duplicated bars when wp_footer is called twice.
 Added external version tagging for troubleshooting.
+
+= 2.0 =
+
+Added Sticky.
+Added Themes.
+3.2.1 Compatible.
+Added Opacity/Transparency.
+AJAX form submissions.
+Custom thank-you page for Aweber.
+Hex color options for appearance.
+Added split-testing option.
+Added submission data, including pages submitted on, and timestamp.
+HTML support for custom content.
 
 == Upgrade Notice ==
 
