@@ -17,7 +17,7 @@ ViperBar adds an attractive bar to your site header, which you can use to increa
 
 == Installation ==
 
-1. Upload ViperFeed directory to the `/wp-content/plugins/` directory
+1. Upload Viperbar directory to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Use the options page to make changes.
 
