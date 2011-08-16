@@ -31,8 +31,6 @@ Email hq@viperchill.com
 
 Yes.
 
-== Screenshots ==
-
 == Changelog ==
 
 = 0.9 =
