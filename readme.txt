@@ -31,6 +31,17 @@ Email hq@viperchill.com
 
 Yes.
 
+== Screenshots ==
+
+1. Configure your basic form copy to best interest your readers. Split-testing this content is optional.
+2. Save your mailing-list options, including list name and an optional thank you page on your site.
+3. Design your Viperbar to make it fit your website's theme.
+4. Preview before launching!
+5. Enable the Viperbar - expect subscription rates to increase dramatically.
+6. Use custom text instead of opt-in forms, if you wish.
+7. Choose from our 9 pre-designed themes.
+8. View in-depth statistics about your Viperbar, including impressions, conversion rates, and more.
+
 == Changelog ==
 
 = 0.9 =
@@ -67,7 +78,7 @@ HTML support for custom content.
 
 == Upgrade Notice ==
 
-This is the first version of this plugin.
+A security flaw has been fixed.
 
 == Donations ==
 
