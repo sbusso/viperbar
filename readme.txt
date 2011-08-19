@@ -5,7 +5,7 @@ Donate link: http://viperchill.com/
 Tags: rss, stats, subscribers, aweber, feedburner, popup, viperchill, bar, conversion, mailchimp, mail, chimp, list, split-test
 Requires at least: 3.0
 Tested up to: 3.2.1
-Stable tag: 2.0
+Stable tag: 2.1
 
 ViperBar adds an attractive bar to your site header, which you can use to increase blog or newsletter subscribers.
 
