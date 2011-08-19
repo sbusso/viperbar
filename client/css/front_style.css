@@ -1,0 +1,16 @@
+#ViperBar_inner p { display: inline !important; line-height: 25px !important; font-family: arial, sans-serif !important; font-size: 15px !important; }
+#ViperBar_hide, #ViperBar_show { position: absolute !important; right: 9px !important; top: 9px !important; cursor: hand !important; background: none !important; -webkit-box-shadow: none !important; -moz-box-shadow: none !important; box-shadow: none !important; }
+#ViperBar_hide:hover, #ViperBar_show:hover { background-color: none !important; }
+#ViperBar_show { display:none; top: 5px !important; }
+#ViperBar_main { position: relative !important; z-index: 10000 !important; height: 39px !important; font-size:15px !important; font-family: arial, sans-serif !important; line-height:18px !important; outline-width:0 !important; text-align:center !important; text-shadow:none !important;
+/* I want to use js to show this later, only after it has been prepended to the body. */ display:none; }
+#ViperBar_credit_logo { position: absolute !important; top: 5px !important; left: 3px !important; margin: 3px 30px 0px 0px !important; }
+.ViperBar_form, #viperbar_mailchimp_form { padding: 0px 10px !important; display: inline !important; margin: 0 !important; }
+.ViperBar_form input { text-transform: none !important; margin: 0px 3px 0px 3px !important; padding: 3px !important; display: inline !important; font-size: 14px !important; height: auto !important; font-weight: normal !important; width: auto !important; font-family: arial, sans-serif !important; text-decoration: none !important; text-transform: none !important; text-shadow: none !important; -moz-border-radius: 5px !important; -webkit-border-radius: 5px !important; border-radius: 5px !important; font-size: 15px !important; }
+.ViperBar_form input[type=text] { line-height:18px !important; background: #FFFFFF !important; color: #999999 !important; border: 1px solid #999999 !important; outline-style: none !important; border-radius: 5px !important; -webkit-border-radius: 5px !important; -moz-border-radius: 5px !important; padding: 4px 7px !important; width: auto !important; }
+#ViperBar_inner { position: relative !important; padding: 5px 0px 0px 0px !important; height: 33px !important; overflow: hidden !important; width: 100% !important; font-size: 15px !important; font-family: arial, sans-serif !important; text-align: center !important; text-shadow: none !important; }
+#ViperBar_submit { line-height:20px !important; border: 0px !important; border-radius:5px !important; text-align:center !important; padding:3px 5px !important; margin:0 !important; display:inline !important; height: auto !important; }
+#viperbar_sticky { position:absolute !important; top:0 !important; z-index:2 !important; }
+#ViperBar_main.fixed { width:100% !important; position: fixed !important; top: 0 !important; }
+#viperbar_ajaxload { width: 250px !important; margin: 7px auto !important; display:none; background-image: url('../../images/ajaxload.gif') !important; background-repeat: no-repeat !important; text-align: center !important; padding:0 !important; line-height: 15px !important;}
+#viperbar_ajaxload em { padding-left: 150px !important; }
