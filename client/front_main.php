@@ -347,7 +347,10 @@ function viperbar_get_mailchimp($options, $button_style) {
 	include_once WP_PLUGIN_DIR . '/viperbar/includes/mailchimp/inc/MCAPI.class.php';
 	$mailchimp_id = trim($options['form_id_mailchimp']);
 	$mailchimp_list = trim($options['form_id_mailchimp_list']);
-	$ViperBar_api = new MCAPI( $mailchimp_id );
+	
+	if (!class_exists(MCAPI)) {
+		$ViperBar_api = new MCAPI( $mailchimp_id );
+	}
 	$merge_vars = $ViperBar_api->listMergeVars( $mailchimp_list );
 
 	if (!$ViperBar_api->errorCode) {
