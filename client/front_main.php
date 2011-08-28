@@ -146,7 +146,7 @@ function viperbar_get_bar($preview = 'no', $thanks = 'no') {
 	// The user may choose not to display the bar to administrators.
 	if ($preview == 'no' && ($options['enabled'] == 'false' ||
 			(current_user_can('manage_options') && $options['show_to_admin'] == 'false'))) {
-		continue;
+		exit;
 	}
 	// Split-testing options, output text either for set A and for set B.
 	if ($options['split_testing_enabled'] == 'on' && $select == 'b') {
