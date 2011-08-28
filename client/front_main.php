@@ -58,8 +58,11 @@ function viperbar_load() {
 	viperbar_front_script($select, $split_testing, $sticky, $viperbar_ajax_nonce, $cookie_hide, $cookie_days, $form_type);
 
 	// If not in wp-admin (in which case this is a preview, and the bar will not be prepended), call prepend function.
-	if (!is_admin()) {
-		add_action('wp_footer', 'viperbar_prepend');
+	if (!is_admin() ) {
+		// The user may choose not to display the bar to administrators.
+		if ($options['enabled'] != 'false' && (current_user_can('manage_options') && $options['show_to_admin'] != 'false')) {
+			add_action('wp_footer', 'viperbar_prepend');
+		}
 	}
 }
 /*
@@ -143,11 +146,6 @@ function viperbar_prepend() {
 function viperbar_get_bar($preview = 'no', $thanks = 'no') {
 	global $select;
 	$options = get_option( 'viperbar_options_general' );
-	// The user may choose not to display the bar to administrators.
-	if ($preview == 'no' && ($options['enabled'] == 'false' ||
-			(current_user_can('manage_options') && $options['show_to_admin'] == 'false'))) {
-		exit;
-	}
 	// Split-testing options, output text either for set A and for set B.
 	if ($options['split_testing_enabled'] == 'on' && $select == 'b') {
 		$text_before = stripslashes($options['text_before_b']);
